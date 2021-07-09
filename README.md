@@ -1,4 +1,4 @@
-# Password Generator CLI
+# Password Generator CLI [![Node.js Package](https://github.com/DevMoath/password-generator-cli/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/DevMoath/password-generator-cli/actions/workflows/npm-publish.yml)
 
 Node.js cli to generate passwords
 
