@@ -1,0 +1,43 @@
+{
+    "name": "@devmoath/pass",
+    "version": "0.0.1",
+    "description": "Node.js cli to generate passwords",
+    "license": "MIT",
+    "author": "Moath <moath.alhajrii@gmail.com> (https://moath.dev/)",
+    "homepage": "https://github.com/DevMoath/password-generator-cli#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DevMoath/password-generator-cli.git"
+    },
+    "bugs": {
+        "url": "https://github.com/DevMoath/password-generator-cli/issues"
+    },
+    "main": "src/index.js",
+    "preferGlobal": true,
+    "bin": "./src/index.js",
+    "files": [
+        "src/*.js"
+    ],
+    "scripts": {
+        "fixer": "npx prettier --write .",
+        "test": "jest --verbose --coverage"
+    },
+    "dependencies": {
+        "chalk": "^4.1.1",
+        "clipboardy": "^2.3.0",
+        "commander": "^8.0.0"
+    },
+    "devDependencies": {
+        "@types/jest": "^26.0.23",
+        "jest": "^27.0.6",
+        "node-ray": "^1.16.0",
+        "prettier": "^2.3.1"
+    },
+    "keywords": [],
+    "prettier": {
+        "printWidth": 120,
+        "singleQuote": true,
+        "tabWidth": 4,
+        "trailingComma": "es5"
+    }
+}
