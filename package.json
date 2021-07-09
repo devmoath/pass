@@ -34,6 +34,9 @@
         "prettier": "^2.3.1"
     },
     "keywords": [],
+    "publishConfig": {
+        "access": "public"
+    },
     "prettier": {
         "printWidth": 120,
         "singleQuote": true,
