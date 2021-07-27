@@ -1,10 +1,10 @@
-const crypto = require('crypto');
+import crypto from 'crypto';
 
 const alpha = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const numbers = '0123456789';
 const symbols = '!@#$%^&*_-+=';
 
-const generatePassword = (length, chars) => {
+const generatePassword = (length: number | string, chars: string) => {
     const random = crypto.randomBytes(Number(length));
     let password = '';
 
@@ -15,7 +15,7 @@ const generatePassword = (length, chars) => {
     return password;
 };
 
-const createPassword = (length = 8, hasNumbers = true, hasSymbols = true) => {
+export const createPassword = (length: number | string = 8, hasNumbers: boolean = true, hasSymbols: boolean = true) => {
     let chars = alpha;
 
     hasNumbers ? (chars += numbers) : '';
@@ -23,5 +23,3 @@ const createPassword = (length = 8, hasNumbers = true, hasSymbols = true) => {
 
     return generatePassword(length, chars);
 };
-
-module.exports = createPassword;

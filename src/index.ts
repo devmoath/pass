@@ -1,14 +1,12 @@
 #!/usr/bin/env node
-const program = require('commander').program;
-const createPassword = require('./createPassword');
-const chalk = require('chalk');
-const clipboardy = require('clipboardy');
-
-const info = require('../package.json');
+import { program } from 'commander';
+import { createPassword } from './createPassword';
+import chalk from 'chalk';
+import clipboardy from 'clipboardy';
 
 program
-    .version(info.version)
-    .description(info.description)
+    .version('0.1.0')
+    .description('Node.js cli to generate passwords')
     .option('-l, --length <number>', 'length of the password', '8')
     .option('-n, --no-numbers', 'remove numbers')
     .option('-s, --no-symbols', 'remove symbols')
@@ -21,4 +19,4 @@ const password = createPassword(length, numbers, symbols);
 clipboardy.writeSync(password);
 
 console.log(chalk.green('Generated Password: ') + password);
-console.log(chalk.blue('Password copied to clipboard'));
+console.log(chalk.green('Password copied to clipboard'));

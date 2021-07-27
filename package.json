@@ -1,6 +1,6 @@
 {
     "name": "@devmoath/pass",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Node.js cli to generate passwords",
     "license": "MIT",
     "author": "Moath <moath.alhajrii@gmail.com> (https://moath.dev/)",
@@ -12,15 +12,14 @@
     "bugs": {
         "url": "https://github.com/DevMoath/password-generator-cli/issues"
     },
-    "main": "src/index.js",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "preferGlobal": true,
-    "bin": "./src/index.js",
-    "files": [
-        "src/*.js"
-    ],
+    "bin": "./dist/index.js",
     "scripts": {
         "fixer": "npx prettier --write .",
-        "test": "jest --verbose --coverage"
+        "test": "jest --verbose --coverage",
+        "build": "tsc"
     },
     "dependencies": {
         "chalk": "^4.1.1",
@@ -28,12 +27,21 @@
         "commander": "^8.0.0"
     },
     "devDependencies": {
+        "@babel/core": "^7.14.8",
+        "@babel/preset-env": "^7.14.8",
+        "@babel/preset-typescript": "^7.14.5",
         "@types/jest": "^26.0.23",
+        "babel-jest": "^27.0.6",
         "jest": "^27.0.6",
         "node-ray": "^1.16.0",
-        "prettier": "^2.3.1"
+        "prettier": "^2.3.1",
+        "typescript": "^4.3.5"
     },
-    "keywords": [],
+    "keywords": [
+        "password",
+        "generator",
+        "cli"
+    ],
     "publishConfig": {
         "access": "public"
     },
@@ -42,5 +50,18 @@
         "singleQuote": true,
         "tabWidth": 4,
         "trailingComma": "es5"
+    },
+    "babel": {
+        "presets": [
+            [
+                "@babel/preset-env",
+                {
+                    "targets": {
+                        "node": "current"
+                    }
+                }
+            ],
+            "@babel/preset-typescript"
+        ]
     }
 }
